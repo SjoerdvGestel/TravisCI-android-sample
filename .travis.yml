@@ -3,6 +3,9 @@ language: java
 env:
   - TERM=dumb
 
+before_install:
+ - chmod +x gradlew
+
 script:
   - ./gradlew assemble -x test
 
