@@ -1,0 +1,17 @@
+language: java
+
+env:
+  - TERM=dumb
+
+script:
+  - ./gradlew assemble -x test
+
+#before_install:
+#install:
+#before_script:
+#script:
+#after_success or after_failure:
+#after_script:
+#OPTIONAL before_deploy:
+#OPTIONAL deploy:
+#OPTIONAL after_deploy:
