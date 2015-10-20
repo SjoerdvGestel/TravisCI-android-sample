@@ -24,6 +24,6 @@ public class ExampleUnitTest {
 
     @Test
     public void a0_shouldAlwaysPass() throws Exception {
-        Assert.assertTrue(true);
+        Assert.assertTrue(false);
     }
 }
