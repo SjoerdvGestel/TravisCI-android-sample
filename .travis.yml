@@ -12,12 +12,12 @@ cache:
 
 android:
   components:
-    - platform-tools-24.4.0
+    - platform-tools
     - build-tools-23.0.1
     - android-23
     # - extra-android-support-23.0.1
     - extra-android-m2repository-23.0.1
-    - sys-img-armeabi-v7a-android-19
+    - sys-img-armeabi-v7a-android-23
 
 env:
   global:
