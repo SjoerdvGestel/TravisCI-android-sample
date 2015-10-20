@@ -1,15 +1,29 @@
 package com.afrogleap.travis.sample;
 
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
+import org.robolectric.shadows.ShadowLog;
 
-import static org.junit.Assert.*;
 
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
+
+@RunWith(RobolectricTestRunner.class)
+@Config(manifest = Config.NONE)
 public class ExampleUnitTest {
+
+    @Before
+    public void setUp() throws Exception {
+        ShadowLog.stream = System.out;
+    }
+
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void a0_shouldAlwaysPass() throws Exception {
+        Assert.assertTrue(true);
     }
 }
