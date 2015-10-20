@@ -22,7 +22,7 @@ android:
 env:
   global:
     # install timeout in minutes (2 minutes by default)
-    - ADB_INSTALL_TIMEOUT=8
+    # - ADB_INSTALL_TIMEOUT=8
 
 before_install:
   # Grand gradlew proper rights to operate 
@@ -37,8 +37,8 @@ before_script:
   
 
 script:
-  - echo $ADB_INSTALL_TIMEOUT
-  - android list target
+  # - echo $ADB_INSTALL_TIMEOUT
+  # - android list target
   - ./gradlew connectedAndroidTest
 
 notifications:
