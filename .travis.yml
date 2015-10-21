@@ -10,6 +10,11 @@ cache:
     - node_modules
     - $HOME/.gradle/caches/
 
+env:
+  global:
+    # install timeout in minutes (2 minutes by default)
+    - ADB_INSTALL_TIMEOUT=8
+
 android:
   components:
     - platform-tools
@@ -24,6 +29,7 @@ before_install:
   - chmod +x gradlew
   
 before_script:
+  - echo $ADB_INSTALL_TIMEOUT
   - ./gradlew test #run unit tests
   # Emulator Management: Create, Start and Wait
   - echo no | android create avd --force -n test -t android-19 --sdcard 10M --abi armeabi-v7a
@@ -32,9 +38,10 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
-  # - echo $ADB_INSTALL_TIMEOUT
   # - android list target
   - ./gradlew connectedAndroidTest
+
+
 
 notifications:
   email:
