@@ -31,6 +31,6 @@ public class ExampleUnitTest {
     public void a1_calcTest() throws Exception {
         int val = 2+2+2;
 
-        Assert.assertEquals(val, 7); //error
+        Assert.assertEquals(val, 6);
     }
 }
