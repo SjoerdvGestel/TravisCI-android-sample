@@ -24,12 +24,12 @@ before_install:
   - chmod +x gradlew
   
 before_script:
-   - ./gradlew test #run unit tests
-    # Emulator Management: Create, Start and Wait
-    - echo no | android create avd --force -n test -t android-19 --sdcard 10M --abi armeabi-v7a
-    - emulator -avd test -no-skin -no-audio -no-window &
-    - android-wait-for-emulator
-    - adb shell input keyevent 82 &
+  - ./gradlew test #run unit tests
+  # Emulator Management: Create, Start and Wait
+  - echo no | android create avd --force -n test -t android-19 --sdcard 10M --abi armeabi-v7a
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
 
 script:
   # - echo $ADB_INSTALL_TIMEOUT
