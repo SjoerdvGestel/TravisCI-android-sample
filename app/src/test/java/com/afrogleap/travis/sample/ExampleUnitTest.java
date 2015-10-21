@@ -24,6 +24,13 @@ public class ExampleUnitTest {
 
     @Test
     public void a0_shouldAlwaysPass() throws Exception {
-        Assert.assertTrue(false);
+        Assert.assertTrue(true);
+    }
+
+    @Test
+    public void a1_calcTest() throws Exception {
+        int val = 2+2+2;
+
+        Assert.assertEquals(val, 6);
     }
 }
