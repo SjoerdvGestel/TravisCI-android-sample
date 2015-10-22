@@ -17,16 +17,18 @@ env:
 
 android:
   components:
-    - platform-tools
-    - build-tools-23.0.1
-    - android-23
+#    - platform-tools
+#    - build-tools-23.0.1
+#    - android-23
     - extra-android-support
     - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-19
+#    - sys-img-armeabi-v7a-android-19
 
 before_install:
   # Grand gradlew proper rights to operate
   - chmod +x gradlew
+  - "echo $JAVA_OPTS"
+  - "export JAVA_OPTS=-Xmx512m"
 
 install:
    - ./gradlew --version # show version and download Gradle Wrapper when is not present in cache
